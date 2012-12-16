@@ -1,0 +1,51 @@
+* Mesh Viewer
+This program is used to render =.ylp= file in which a 3D mesh model is
+stored.
+
+** Start the program
+Notice that this program has only been built and run under Windows and
+x86 environment currently.  If you want to compile it under other
+environments, you probably need to modify the =src/makefile= a little.
+To get the program running, you also need OpenGL and GLUT libraries.
+
+Prebuilt binaries can be found in =bin/=.  To use the program, enter
+the following command line:
+
+    =meshviewer input-file-name=
+
+Here =meshviewer= is whatever you gave to the name of the executive
+file, and =input-file-name= is the file that stores 3D mesh data.
+
+** Keyboard operations in the program
+After you start the program successfully, you can see the 3D mesh
+model and the coordinate axes.  Red, Green and Blue lines mean x, y
+and z axes respectively.  Here are some operations that can be done
+while you are inspecting the 3D mesh model.
+
+    +   Zoom in
+    -   Zoom out
+    j   Rotate the object downward
+    k   Rotate the object upward
+    h   Rotate the object around its y axis clockwise
+    l   Rotate the object around its y axis counterclockwise
+    q   Exit the program
+    >   Enlarge the axes
+    <   Shrink the axes
+
+
+** Structure of =.ylp= file
+Users can create the mesh files as they want.  The format of =.ylp=
+files is as following.
+
+    (Number of vertices)
+    (Coordinates of 1st vertex)
+    ...
+    (Coordinates of last vertex)
+    (Number of edges)
+    (Indexes of end points of 1st edge)
+    ...
+    (Indexes of end points of last edge)
+    (Number of triangles)
+    (Indexes of vertices of 1st triangle) (Index of edges of 1st triangle)
+    ...
+    (Indexes of vertices of last triangle) (Index of edges of last triangle)
